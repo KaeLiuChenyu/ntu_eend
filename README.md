@@ -1,62 +1,38 @@
-NTU EEND
+Train EEND-SS
 ===========================
 
 
 ****
 
-# Folders for ntu_eend
-## **scr**
+# Folders for train EEND-SS
+## **config**
 Main script:
-1. scr
-   1. dataio
-   2. nnet
-   3. dataio
+1. ntu_eend/task/train/eend_ss
+   1. config
+   2. data
+   3. train_scr
    4. utils
+   5. run.sh
 
->i.dataio
->>Includes dataset processing scripts for creating Datasets.
+>i.config
+>>config files
 
->ii.nnet
->>The components that make up EEND.
+>ii.data
+>>Includes train/dev/test folders.
 
->iii.task
->>Includes scripts to implement tasks.
+>iii.train_scr
+>> Scripts needed for training EEND-SS
 
 >iv.utils
 >>Utilities
 
+>v.run.py
+>>Main script. 
 
 
-## **task**
-Training & Inference task:
-1. task
-   1. Inference
-   2. Train
+## **Usage**
 
+```
+./run.sh
+```
 
->i.Inference
->>Includes several Inference scripts for EEND models.
-
->ii.Train
->>Includes several Training scripts for EEND models.
-
-## **module**
-Module file:
-1. module
-   1. pre_train
-
->i.pre_train
->>Includes pre-trained model files
-
-
-## **additional**
-The attached scripts, such as the preparation of data sets:
-
-
-# Usage
-
-## **Train**
-Check ntu_eend/task/train/eend-ss
-
-## **Inference**
-Check ntu_eend/task/infer/eend-ss
