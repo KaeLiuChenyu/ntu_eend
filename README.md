@@ -48,7 +48,7 @@ The attached scripts, such as the preparation of datasets:
 # Usage
 
 ## **Train**
-Check ntu_diar/task/Train/x_vector
+Check ntu_diar/task/train/eend_ss
 
 ## **Inference**
-Check ntu_diar/task/Inference/silero_xvector
+Check ntu_diar/task/infer/eend_ss
