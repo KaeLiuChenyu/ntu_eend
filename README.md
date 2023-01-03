@@ -1,38 +1,54 @@
-Train EEND-SS
+NTU EEND
 ===========================
 
 
 ****
 
-# Folders for train EEND-SS
-## **config**
+# Folders for ntu_eend
+## **scr**
 Main script:
-1. ntu_eend/task/train/eend_ss
-   1. config
-   2. data
-   3. train_scr
+1. scr
+   1. dataio
+   2. nnet
+   3. task
    4. utils
-   5. run.sh
 
->i.config
->>config files
+>i.dataio
+>>Includes dataset loading processing scripts for creating Datasets.
 
->ii.data
->>Includes train/dev/test folders.
+>ii.nnet
+>>The components that make up EEND system. This includes the transformer network structure contained in EEND, the RNN structure of EDA, and Speech Separation Network Conv-TasNet.
 
->iii.train_scr
->> Scripts needed for training EEND-SS
+>iii.task
+>>Includes scripts to implement training tasks.
 
 >iv.utils
 >>Utilities
 
->v.run.py
->>Main script. 
 
 
-## **Usage**
+## **task**
+Training & Inference task:
+1. task
+   1. Inference
+   2. Train
 
-```
-./run.sh
-```
 
+>i.Inference
+>>Includes several Inference scripts for EEND models.
+
+>ii.Train
+>>Includes several Training scripts for EEND models.
+
+
+## **additional**
+The attached scripts, such as the preparation of datasets:
+
+
+# Usage
+
+## **Train**
+Check ntu_diar/task/Train/x_vector
+
+## **Inference**
+Check ntu_diar/task/Inference/silero_xvector
