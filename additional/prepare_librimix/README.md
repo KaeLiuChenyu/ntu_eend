@@ -13,7 +13,7 @@ KALDI_ROOT=path/to/your/kaldi
 2.Link steps and utils folders:
 ```
 ln -sf path/to/your/kaldi/egs/wsj/s5/steps /prepare_librimix
-!ln -sf path/to/your/kaldi/egs/wsj/s5/utils /prepare_librimix  
+ln -sf path/to/your/kaldi/egs/wsj/s5/utils /prepare_librimix  
 ```
 3.Run:
 ```
