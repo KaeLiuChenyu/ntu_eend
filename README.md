@@ -48,7 +48,7 @@ The attached scripts, such as the preparation of datasets:
 # Usage
 
 ## **Train**
-Check ntu_diar/task/train/eend_ss
+Please check [ntu_diar/task/train/eend_ss](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/task/train/eend_ss)
 
 ## **Inference**
-Check ntu_diar/task/infer/eend_ss
+Please check [ntu_diar/task/infer/eend_ss](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/task/infer/eend_ss)
