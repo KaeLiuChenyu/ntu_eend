@@ -365,16 +365,8 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
 
         # NOTE(kamo): --fold_length is used only if --batch_type=folded and it's ignored in the other case
         log "Diarization training started... log: '${diar_exp}/train.log'"
-        if echo "${cuda_cmd}" | grep -e queue.pl -e queue-freegpu.pl &> /dev/null; then
-            # SGE can't include "/" in a job name
-            jobname="$(basename ${diar_exp})"
-        else
-            jobname="${diar_exp}/train.log"
-        fi
-
         # shellcheck disable=SC2086
         ${python} -m ntu_eend.scr.task.launch \
-            --cmd "${cuda_cmd} --name ${jobname}" \
             --log "${diar_exp}"/train.log \
             --ngpu "${ngpu}" \
             --num_nodes "${num_nodes}" \
