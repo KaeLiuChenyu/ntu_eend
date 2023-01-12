@@ -29,6 +29,9 @@ Train EEND-SS
 
 
 ## **Usage**
+Step 0(Dataset):
+Please check [ntu_eend/additional/prepare_librimix](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/additional/prepare_librimix)
+
 Step 1:
 ```
 python -m pip install -r requirements.txt
@@ -38,4 +41,6 @@ Step 2:
 ```
 ./run.sh
 ```
+
+
 
