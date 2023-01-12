@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .eend_ss import EENDSSTask
+from eend_ss import EENDSSTask
 
 def get_parser():
     parser = EENDSSTask.get_parser()
