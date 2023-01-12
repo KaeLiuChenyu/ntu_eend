@@ -11,6 +11,7 @@ log() {
     echo -e "$(date '+%Y-%m-%dT%H:%M:%S') (${fname}:${BASH_LINENO[0]}:${FUNCNAME[1]}) $*"
 }
 
+nj=1
 train_set=
 valid_set=
 test_sets=
@@ -53,6 +54,7 @@ fi
 
 data_feats=${dumpdir}/raw
 
+feats_type=raw
 
 
 # ========================== Main stages start from here. ==========================
@@ -102,7 +104,6 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
             _spk_list+=$(for n in $(seq $dereverb_ref_num); do echo -n "dereverb$n "; done)
         fi
 
-
         for spk in ${_spk_list} "wav" ; do
             # shellcheck disable=SC2086
             scripts/audio/format_wav_scp.sh --nj "${nj}" --cmd "${train_cmd}" \
@@ -112,6 +113,7 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
                 "${data_feats}${_suf}/${dset}/logs/${spk}" "${data_feats}${_suf}/${dset}/data/${spk}"
 
         done
+        
         echo "${feats_type}" > "${data_feats}${_suf}/${dset}/feats_type"
 
         # specifics for diarization
