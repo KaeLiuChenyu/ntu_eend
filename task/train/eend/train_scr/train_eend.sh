@@ -138,7 +138,7 @@ EOF
 
 log "$0 $*"
 # Save command line args for logging (they will be lost after utils/parse_options.sh)
-run_args=$(pyscripts/utils/print_args.py $0 "$@")
+run_args=$(utils/print_args.py $0 "$@")
 . utils/parse_options.sh
 
 if [ $# -ne 0 ]; then
@@ -150,7 +150,6 @@ fi
 # Check required arguments
 [ -z "${train_set}" ] && { log "${help_message}"; log "Error: --train_set is required"; exit 2; };
 [ -z "${valid_set}" ] &&   { log "${help_message}"; log "Error: --valid_set is required"  ; exit 2; };
-[ -z "${test_sets}" ] && { log "${help_message}"; log "Error: --test_sets is required"; exit 2; };
 
 # The directory for dataset
 data_feats=${dumpdir}
@@ -303,16 +302,9 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
 
     # NOTE(kamo): --fold_length is used only if --batch_type=folded and it's ignored in the other case
     log "Diarization training started... log: '${diar_exp}/train.log'"
-    if echo "${cuda_cmd}" | grep -e queue.pl -e queue-freegpu.pl &> /dev/null; then
-        # SGE can't include "/" in a job name
-        jobname="$(basename ${diar_exp})"
-    else
-        jobname="${diar_exp}/train.log"
-    fi
 
     # shellcheck disable=SC2086
     ${python} -m ntu_eend.scr.task.launch \
-        --cmd "${cuda_cmd} --name ${jobname}" \
         --log "${diar_exp}"/train.log \
         --ngpu "${ngpu}" \
         --num_nodes "${num_nodes}" \

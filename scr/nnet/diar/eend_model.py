@@ -15,7 +15,7 @@ from ntu_eend.scr.nnet.asr.encoder.abs_encoder import AbsEncoder
 from ntu_eend.scr.nnet.asr.frontend.abs_frontend import AbsFrontend
 from ntu_eend.scr.nnet.asr.specaug.abs_specaug import AbsSpecAug
 from ntu_eend.scr.nnet.diar.attractor.abs_attractor import AbsAttractor
-from ntu_eend.scr.nnet.enh.decoder.abs_decoder import AbsDecoder
+from ntu_eend.scr.nnet.diar.decoder.abs_decoder import AbsDecoder
 from ntu_eend.scr.task.layers.abs_normalize import AbsNormalize
 from ntu_eend.scr.utils.device_funcs import force_gatherable
 from ntu_eend.scr.task.train.abs_espnet_model import AbsESPnetModel

@@ -29,23 +29,18 @@ Train EEND-SS
 
 
 ## **Usage**
-First:
+Step 0(Dataset):
+Please check [ntu_eend/additional/prepare_librimix](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/additional/prepare_librimix)
+
+Step 1:
 ```
-pip install jaconv
-
-pip install jamo
-
-pip install torch_complex
-
-pip install espnet_tts_frontend
-
-pip install fast_bss_eval
-
-pip install ci_sdr
+python -m pip install -r requirements.txt
 ```
 
-Second:
+Step 2:
 ```
 ./run.sh
 ```
+
+
 

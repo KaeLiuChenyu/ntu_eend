@@ -138,7 +138,7 @@ EOF
 
 log "$0 $*"
 # Save command line args for logging (they will be lost after utils/parse_options.sh)
-run_args=$(pyscripts/utils/print_args.py $0 "$@")
+run_args=$(utils/print_args.py $0 "$@")
 . utils/parse_options.sh
 
 if [ $# -ne 0 ]; then
@@ -150,7 +150,6 @@ fi
 # Check required arguments
 [ -z "${train_set}" ] && { log "${help_message}"; log "Error: --train_set is required"; exit 2; };
 [ -z "${valid_set}" ] &&   { log "${help_message}"; log "Error: --valid_set is required"  ; exit 2; };
-[ -z "${test_sets}" ] && { log "${help_message}"; log "Error: --test_sets is required"; exit 2; };
 
 # The directory for dataset
 data_feats=${dumpdir}
@@ -230,7 +229,7 @@ if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
 
     # shellcheck disable=SC2086
     utils/run.pl JOB=1:"${_nj}" "${_logdir}"/stats.JOB.log \
-        python $workdir/train_eend.py \
+        python $workdir/train_eend_eda.py \
             --collect_stats true \
             --use_preprocessor true \
             --train_data_path_and_name_and_type "${_diar_train_dir}/${_scp},speech,${_type}" \
@@ -318,7 +317,7 @@ if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
         --num_nodes "${num_nodes}" \
         --init_file_prefix "${diar_exp}"/.dist_init_ \
         --multiprocessing_distributed true -- \
-        python $workdir/train_eend.py \
+        python $workdir/train_eend_eda.py \
             --use_preprocessor true \
             --resume true \
             --fold_length "${_fold_length}" \

@@ -93,7 +93,7 @@ attractor_choices = ClassChoices(
 )
 
 
-class DiarizationTask(AbsTask):
+class EENDTask(AbsTask):
     # If you need more than one optimizer, change this value
     num_optimizers: int = 1
 

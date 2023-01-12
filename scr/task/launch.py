@@ -9,9 +9,9 @@ import subprocess
 import sys
 import uuid
 
-from espnet.utils.cli_utils import get_commandline_args
-from espnet2.utils.types import str2bool
-from espnet2.utils.types import str_or_none
+from ntu_eend.scr.utils.cli_utils import get_commandline_args
+from ntu_eend.scr.utils.types import str2bool
+from ntu_eend.scr.utils.types import str_or_none
 
 
 def get_parser():
