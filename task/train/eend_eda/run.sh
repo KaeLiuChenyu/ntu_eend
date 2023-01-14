@@ -10,6 +10,8 @@ valid_set="dev"
 train_config1="config/train_eend_eda.yaml"
 train_config2="config/adapt_train_eend_eda.yaml"
 
+pretrain_model="exp/diar_train_diar_eda_5_raw_max_epoch250/valid.acc.ave_10best.pth"
+
 pretrain_stage=true
 adapt_stage=false
 # If you want to run only one of the stages (e.g., the adaptation stage),
@@ -37,7 +39,7 @@ if [[ ${adapt_stage} == "true" ]]; then
     --ngpu 1 \
     --diar_config "${train_config2}" \
     --local_data_opts "--stage 2" \
-    --diar_args "--init_param exp/diar_train_diar_eda_5_raw_max_epoch250/valid.acc.ave_10best.pth" \
+    --diar_args "--init_param ${pretrain_model}" \
     --diar_tag "train_diar_eda_adapt_raw" \
     --num_spk "3"\
     "$@"
