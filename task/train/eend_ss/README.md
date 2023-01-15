@@ -31,6 +31,20 @@ Train EEND-SS
 ## **Usage**
 Step 0(Dataset):
 Please check [ntu_eend/additional/prepare_librimix](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/additional/prepare_librimix)
+>2&3 speaker model:
+>>Use Libri2Mix & Libri3Mix
+```
+pretrain_stage=false
+adapt_stage=true
+pretrain_model="path of the pre-trained 2 spk model"
+```
+
+>2 speaker model:
+>>Use Libri2Mix
+```
+pretrain_stage=true
+adapt_stage=false
+```
 
 Step 1:
 ```
