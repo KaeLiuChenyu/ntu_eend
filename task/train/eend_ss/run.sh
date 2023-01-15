@@ -32,6 +32,7 @@ if [[ ${pretrain_stage} == "true" ]]; then
     --stage 1 \
     --stop_stage 10 \
     "$@"
+fi
 
 # Modify "--diar_args "--init_param <path of the pre-trained model>""
 if [[ ${adapt_stage} == "true" ]]; then
@@ -51,3 +52,4 @@ if [[ ${adapt_stage} == "true" ]]; then
     --stop_stage 10 \
     --diar_args "--init_param ${pretrain_model}" \
     "$@"
+fi

@@ -16,5 +16,4 @@ spk_num=2
     --test_sets "${test_sets}" \
     --nj 1 \
     --spk_num "${spk_num}" \
-    --local_data_opts "--num_spk ${spk_num}" \
     "$@"
