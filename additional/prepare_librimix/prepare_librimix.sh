@@ -28,7 +28,7 @@ use_dereverb_ref=false
 use_noise_ref=false
 
 fs=8k 
-audio_format=flac
+audio_format=wav
 min_wav_duration=0.1   
 
 log "$0 $*"
