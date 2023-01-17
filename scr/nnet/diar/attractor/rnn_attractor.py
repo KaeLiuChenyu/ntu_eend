@@ -8,7 +8,7 @@ class RnnAttractor(AbsAttractor):
 
     def __init__(
         self,
-        encoder_output_size: int,
+        encoder_output_size: int = 256,
         layer: int = 1,
         unit: int = 512,
         dropout: float = 0.1,

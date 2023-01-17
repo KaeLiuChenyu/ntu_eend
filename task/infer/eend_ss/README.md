@@ -19,14 +19,27 @@ Infer EEND-SS
 
 
 ## **Usage**
-First:
+Step 0(Dataset):
+Please check [ntu_eend/additional/prepare_librimix](https://github.com/KaeLiuChenyu/ntu_eend/tree/main/additional/prepare_librimix)
+
+Step 1:
 ```
 Modify 
-WAVPATH = ''
-MODELPATH = ''
-in run.py
+train_config=/exp/train/config.yaml # automatically generated files in training exp folder
+model_file=/valid.si_snr_loss.best_old.pth # path to checkpoint file
+threshold=
+in run.sh
 ```
-Second:
+Step 2:
 ```
-python ./run.py
+./run.sh
+```
+Step 3:
+generate_rttm=true:
+```
+The final result will be saved in result/pre.rttm
+```
+generate_rttm=false:
+```
+The prediction of test audio will be saved in result/predictions as .npy files
 ```

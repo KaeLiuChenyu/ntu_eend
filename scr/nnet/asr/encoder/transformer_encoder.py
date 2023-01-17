@@ -61,7 +61,7 @@ class TransformerEncoder(AbsEncoder):
 
     def __init__(
         self,
-        input_size: int,
+        input_size: int = 128,
         output_size: int = 256,
         attention_heads: int = 4,
         linear_units: int = 2048,

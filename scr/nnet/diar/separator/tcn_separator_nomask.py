@@ -15,7 +15,7 @@ is_torch_1_9_plus = LooseVersion(torch.__version__) >= LooseVersion("1.9.0")
 class TCNSeparator(AbsSeparator):
     def __init__(
         self,
-        input_dim: int,
+        input_dim: int = 512,
         layer: int = 8,
         stack: int = 3,
         bottleneck_dim: int = 128,

@@ -18,7 +18,7 @@ from torch_complex.tensor import ComplexTensor
 class MultiMask(AbsMask):
     def __init__(
         self,
-        input_dim: int,
+        input_dim: int = 512,
         bottleneck_dim: int = 128,
         max_num_spk: int = 3,
         mask_nonlinear="relu",

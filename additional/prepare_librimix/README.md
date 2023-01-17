@@ -28,6 +28,12 @@ ln -sf path/to/your/kaldi/egs/wsj/s5/utils /prepare_librimix
 ./run.sh
 ```
 5.Result:
-
-    The result will be saved in dump/raw/train&dev&test
-
+Test:
+```
+cp -r dump/raw/test task/infer/your_task/data
+```
+Train:
+```
+cp -r dump/raw/train task/train/your_task/data
+cp -r dump/raw/dev task/train/your_task/data
+```
