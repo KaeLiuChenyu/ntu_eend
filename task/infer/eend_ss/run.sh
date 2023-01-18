@@ -6,7 +6,7 @@ threshold=0.7
 
 generate_rttm=true
 
-python ./eend_ss_inference.py \
+python ./infer_scr/eend_ss_inference.py \
       --ngpu 0 \
       --fs 8k \
       --data_path_and_name_and_type "data/test/wav.scp,speech_mix,sound" \
@@ -23,3 +23,4 @@ python ./utils/make_rttm.py \
       --subsampling 1 \
       "/result/diarize.scp" \
       "/result/pre.rttm"
+fi
