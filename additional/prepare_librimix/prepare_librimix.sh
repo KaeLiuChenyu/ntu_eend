@@ -25,7 +25,7 @@ noise_type_num=1
 dereverb_ref_num=1
 
 use_dereverb_ref=false
-use_noise_ref=false
+use_noise_ref=true
 
 fs=8k 
 audio_format=wav

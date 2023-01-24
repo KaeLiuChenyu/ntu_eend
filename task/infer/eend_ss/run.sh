@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-train_config="/content/drive/MyDrive/ntu_eend/task/train/eend_ss/exp/train/config.yaml"
-model_file="/content/drive/MyDrive/ntu_eend_ss/models/valid.si_snr_loss.best_old.pth"
+train_config="/export/home2/tuantd/diarization/ntu_eend/task/train/eend_ss/config/train_eend_ss.yaml"
+model_file="/export/home2/tuantd/diarization/ntu_eend/task/infer/eend_ss/checkpoints/valid.si_snr_loss.best_old.pth"
 threshold=0.7
 
 generate_rttm=true
 
-python ./eend_ss_inference.py \
+python ./infer_scr/eend_ss_inference.py \
       --ngpu 0 \
       --fs 8k \
       --data_path_and_name_and_type "data/test/wav.scp,speech_mix,sound" \
