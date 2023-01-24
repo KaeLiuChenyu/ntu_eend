@@ -25,7 +25,7 @@ Please check [ntu_eend/additional/prepare_librimix](https://github.com/KaeLiuChe
 Step 1:
 ```
 Modify 
-train_config=/exp/train/config.yaml # automatically generated files in training exp folder
+train_config=train/eend_ss/exp/train/config.yaml # automatically generated files in training exp folder
 model_file=/valid.si_snr_loss.best_old.pth # path to checkpoint file
 threshold=
 in run.sh

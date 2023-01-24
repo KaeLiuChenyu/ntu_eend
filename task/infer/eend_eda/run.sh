@@ -4,8 +4,7 @@ train_config='exp/train/config.yaml'
 model_file='exp/train/valid.acc.best.pth'
 threshold=0.7
 
-generate_rttm=true
-
+generate_rttm=false
 
 python ./infer_scr/eend_eda_inference.py \
       --ngpu 0 \

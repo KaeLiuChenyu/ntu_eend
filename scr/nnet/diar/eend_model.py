@@ -48,6 +48,7 @@ class EENDModel(AbsESPnetModel):
         encoder: AbsEncoder,
         decoder: AbsDecoder,
         attractor: Optional[AbsAttractor],
+        diar_weight: float = 1.0,
         attractor_weight: float = 1.0,
     ):
         assert check_argument_types()
@@ -62,6 +63,7 @@ class EENDModel(AbsESPnetModel):
         self.attractor_weight = attractor_weight
         self.attractor = attractor
         self.decoder = decoder
+        self.diar_weight = diar_weight
 
         if self.attractor is not None:
             self.decoder = None

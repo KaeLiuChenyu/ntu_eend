@@ -23,3 +23,4 @@ python ./utils/make_rttm.py \
       --subsampling 1 \
       "/result/diarize.scp" \
       "/result/pre.rttm"
+fi

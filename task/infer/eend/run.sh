@@ -4,12 +4,12 @@ train_config=
 model_file=
 threshold=0.7
 
-generate_rttm=true
+generate_rttm=false
 
-python ./eend_inference.py \
+python ./infer_scr/eend_inference.py \
       --ngpu 0 \
       --fs 8k \
-      --data_path_and_name_and_type "data/test/wav.scp,speech_mix,sound" \
+      --data_path_and_name_and_type "data/test/wav.scp,speech,sound" \
       --train_config $train_config \
       --model_file $model_file \
       --output_dir "result" \
@@ -23,3 +23,4 @@ python ./utils/make_rttm.py \
       --subsampling 1 \
       "/result/diarize.scp" \
       "/result/pre.rttm"
+fi
