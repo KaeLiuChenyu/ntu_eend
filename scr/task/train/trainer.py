@@ -307,6 +307,7 @@ class Trainer:
                 )
             if not distributed_option.distributed or distributed_option.dist_rank == 0:
                 # att_plot doesn't support distributed
+                """
                 if plot_attention_iter_factory is not None:
                     with reporter.observe("att_plot") as sub_reporter:
                         cls.plot_attention(
@@ -317,6 +318,7 @@ class Trainer:
                             reporter=sub_reporter,
                             options=trainer_options,
                         )
+                """
 
             # 2. LR Scheduler step
             for scheduler in schedulers:

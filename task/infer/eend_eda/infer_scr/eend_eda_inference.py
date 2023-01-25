@@ -18,7 +18,7 @@ from typeguard import check_argument_types
 from ntu_eend.scr.utils.cli_utils import get_commandline_args
 from ntu_eend.scr.dataio.fileio.npy_scp import NpyScpWriter
 
-from eend_eda import EENDEDATask
+from .eend_eda import EENDEDATask
 
 from ntu_eend.scr.utils.device_funcs import to_device
 from ntu_eend.scr.utils.set_all_random_seed import set_all_random_seed
@@ -110,8 +110,8 @@ class DiarizeSpeech:
         )
 
         # a. To device
-        speech = to_device(speech, device=self.device)
-        lengths = to_device(lengths, device=self.device)
+        # speech = to_device(speech, device=self.device)
+        # lengths = to_device(lengths, device=self.device)
 
         if self.segmenting and lengths[0] > self.segment_size * fs:
             # Segment-wise speaker diarization
@@ -137,6 +137,8 @@ class DiarizeSpeech:
                     [batch_size], dtype=torch.long, fill_value=T
                 )
                 # b. Diarization Forward
+                speech_seg = to_device(speech_seg, device=self.device)
+                lengths_seg = to_device(lengths_seg, device=self.device)
                 encoder_out, encoder_out_lens = self.diar_model.encode(
                     speech_seg, lengths_seg
                 )
@@ -175,7 +177,7 @@ class DiarizeSpeech:
                                 encoder_out.size(0),
                                 max_num_spk + 1,
                                 encoder_out.size(2),
-                            ),
+                            ).to(self.device),
                         )
                         att_prob = torch.squeeze(att_prob)
                         for pred_num_spk in range(len(att_prob)):

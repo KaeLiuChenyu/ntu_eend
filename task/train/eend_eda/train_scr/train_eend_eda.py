@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .eend_eda import EENDTask
+from eend_eda import EENDTask
 
 
 def get_parser():

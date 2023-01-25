@@ -25,7 +25,7 @@ from ntu_eend.scr.nnet.enh.loss.wrappers.pit_solver import PITSolver
 from ntu_eend.scr.dataio.fileio.npy_scp import NpyScpWriter
 from ntu_eend.scr.dataio.fileio.sound_scp import SoundScpWriter
 
-from eend_ss import EENDSSTask
+from .eend_ss import EENDSSTask
 
 from ntu_eend.scr.utils.device_funcs import to_device
 from ntu_eend.scr.utils.set_all_random_seed import set_all_random_seed
@@ -437,7 +437,7 @@ class DiarSepSpeech:
                             diar_encoder_out.size(0),
                             self.diar_enh_model.max_num_spk + 1,
                             diar_encoder_out.size(2),
-                        ),
+                        ).to(self.device),
                     )
                     att_prob = torch.squeeze(att_prob)
                     for pred_num_spk in range(len(att_prob)):

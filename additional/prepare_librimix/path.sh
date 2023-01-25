@@ -1,5 +1,5 @@
 MAIN_ROOT=$PWD
-KALDI_ROOT=/opt/kaldi
+KALDI_ROOT=~/kaldi
 
 export PATH=$PWD/utils/:$KALDI_ROOT/tools/openfst/bin:$PATH
 [ ! -f $KALDI_ROOT/tools/config/common_path.sh ] && echo >&2 "The standard file $KALDI_ROOT/tools/config/common_path.sh is not present -> Exit!" && exit 1

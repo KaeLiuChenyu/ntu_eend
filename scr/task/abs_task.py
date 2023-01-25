@@ -1798,16 +1798,18 @@ class AbsTask(ABC):
             dataset, allow_variable_data_keys, train=False, inference=inference
         )
 
-        # #------------------check dataloader-------------------#
-        # print("#------------------------TEST----------------------------#")
-        # print("Test Dataloader in /task/abs_task:build_streaming_iterator")
-        # print("#--------------------------------------------------------#")
-        # for data in dataset:
-        #     print("UID:",data[0])
-        #     for key in data[1]:
-        #         print("data type:",key)
-        #         print("data shape",data[1][key].shape)
-        # #-----------------------------------------------------#
+        """
+        # ------------------check dataloader-------------------#
+        print("#------------------------TEST----------------------------#")
+        print("Test Dataloader in /task/abs_task:build_streaming_iterator")
+        print("#--------------------------------------------------------#")
+        for data in dataset:
+            print("UID:",data[0])
+            for key in data[1]:
+                print("data type:",key)
+                print("data shape",data[1][key].shape)
+        # -----------------------------------------------------#
+        """
 
         return DataLoader(
             dataset=dataset,

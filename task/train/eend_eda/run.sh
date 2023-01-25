@@ -18,7 +18,7 @@ adapt_stage=false
 # set "false" to the one you don't want to run (e.g., the pre-training stage)
 
 if [[ ${pretrain_stage} == "true" ]]; then
-./train_scr/train_eend_eda.sh.sh \
+./train_scr/train_eend_eda.sh \
     --collar 0.0 \
     --train_set "${train_set}" \
     --valid_set "${valid_set}" \
