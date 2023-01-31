@@ -336,8 +336,8 @@ class Trainer:
             if not distributed_option.distributed or distributed_option.dist_rank == 0:
                 # 3. Report the results
                 logging.info(reporter.log_message())
-                if trainer_options.use_matplotlib:
-                    reporter.matplotlib_plot(output_dir / "images")
+                #if trainer_options.use_matplotlib:
+                #    reporter.matplotlib_plot(output_dir / "images")
                 if train_summary_writer is not None:
                     reporter.tensorboard_add_scalar(train_summary_writer, key1="train")
                     reporter.tensorboard_add_scalar(valid_summary_writer, key1="valid")

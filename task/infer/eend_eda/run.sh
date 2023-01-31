@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 train_config='exp/train/config.yaml'
-model_file='exp/train/valid.acc.best.pth'
+model_file='exp/train/valid.acc.ave_10best.pth'
 threshold=0.7
 
 generate_rttm=false

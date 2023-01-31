@@ -18,7 +18,7 @@ from typeguard import check_argument_types
 from ntu_eend.scr.utils.cli_utils import get_commandline_args
 from ntu_eend.scr.dataio.fileio.npy_scp import NpyScpWriter
 
-from .eend_eda import EENDEDATask
+from eend_eda import EENDEDATask
 
 from ntu_eend.scr.utils.device_funcs import to_device
 from ntu_eend.scr.utils.set_all_random_seed import set_all_random_seed

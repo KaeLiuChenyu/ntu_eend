@@ -28,6 +28,7 @@ from torch.utils.data import DataLoader
 from typeguard import check_argument_types
 from typeguard import check_return_type
 import yaml
+import wandb
 
 #from espnet import __version__
 
@@ -71,10 +72,6 @@ from ntu_eend.scr.utils.types import str_or_int
 from ntu_eend.scr.utils.types import str_or_none
 from ntu_eend.scr.utils.yaml_no_alias_safe_dump import yaml_no_alias_safe_dump
 
-try:
-    import wandb
-except Exception:
-    wandb = None
 
 if LooseVersion(torch.__version__) >= LooseVersion("1.5.0"):
     from torch.multiprocessing.spawn import ProcessContext

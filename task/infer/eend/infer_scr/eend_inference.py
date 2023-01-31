@@ -18,7 +18,7 @@ from typeguard import check_argument_types
 from ntu_eend.scr.utils.cli_utils import get_commandline_args
 from ntu_eend.scr.dataio.fileio.npy_scp import NpyScpWriter
 
-from eend import EENDTask
+from .eend import EENDTask
 
 from ntu_eend.scr.utils.device_funcs import to_device
 from ntu_eend.scr.utils.set_all_random_seed import set_all_random_seed
@@ -56,7 +56,7 @@ class DiarizeSpeech:
         assert check_argument_types()
 
         # 1. Build Diar model
-        diar_model, diar_train_args = EENDEDATask.build_model_from_file(
+        diar_model, diar_train_args = EENDTask.build_model_from_file(
             train_config, model_file, device
         )
         diar_model.to(dtype=getattr(torch, dtype)).eval()

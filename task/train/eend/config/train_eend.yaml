@@ -19,7 +19,7 @@ decoder: linear
 
 # minibatch related
 batch_type: folded
-batch_size: 64
+batch_size: 512
 
 # optimization related
 optim: adam
